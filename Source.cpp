@@ -3063,7 +3063,7 @@ void main() {
 				{
 					godsHandCharge -= 3;
 					Doomsday++;
-					cout << "God's Hand Charge Remaining: " << godsHandCharge << ". Doomsday now in " << Doomsday << " days." << endl;
+					cout << "God's Hand Charge Remaining: " << godsHandCharge << ". Doomsday now in " << Doomsday-day << " days." << endl;
 					cin.get();
 				}
 			}
