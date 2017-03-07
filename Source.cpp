@@ -9,7 +9,7 @@
 
 #include <string>
 
-void ClearScreen()
+void ClearScreen() //declare function that clears the screen
 {
 	cout << string(100, '\n');
 }
@@ -34,9 +34,9 @@ using std::set;
 using namespace std::chrono;
 using namespace std::this_thread;
 
+//This function outputs instructions and an introduction for the player
 void intro()
 {
-#pragma region Intro
 	cout << "Welcome to Utopia Engine! (Press enter to continue.)" << endl;
 	cin.get();
 	cout << "In this game you play as Isodoros, a talented Artificer who has been charged with reconstructing a fabled device called the Utopia Engine." << endl;
@@ -54,17 +54,21 @@ void intro()
 	cout << "Good luck!" << endl;
 	cin.get();
 	ClearScreen();
-#pragma endregion
 }
 
-int diceRollSearch(); //to search
+//This function is called any time that the player is searching an area
+int diceRollSearch();
 
-int diceRollActivate(int &health); //to activate constructs
+//This function is called any time that the player attempts to activate a construct
+int diceRollActivate(int &health); 
 
+//This function allows the player to take up to 10 points off of their search result
 void takeUpToTenOffSearchResult(int &result);
 
+//This function is called on specific event days, and rerolls the events in each region
 void rerollEventDays(int &activeMonsters, int &fleetingVisions, int &goodFortune, int &foulWeather);
 
+//This function is called any time the player takes damage to see if they have been killed or knocked unconcious.
 void checkIfDead(int &hp, bool constructActivated, bool &fightOver, int &day);
 
 void main() {
@@ -90,7 +94,7 @@ void main() {
 	bool treasure1Found = false, treasure2Found = false, treasure3Found = false, treasure4Found = false, treasure5Found = false, treasure6Found = false;
 	bool connection12 = false, connection14 = false, connection15 = false, connection46 = false, connection43 = false, connection23 = false;
 	bool noConnections = true, noConstructs = true;
-	int wasteBasket;
+	int wasteBasket; //values can be moved to the waste basket during activation
 #pragma endregion
 
 	intro();
