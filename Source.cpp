@@ -2980,7 +2980,7 @@ void main() {
 					cin.get();
 					result += diceRollActivate(hp);
 
-					cout << "Result: " << result << "of the four points needed to activate the construct. Any extra points are transfered to the God's Hand device." << endl;
+					cout << "Result: " << result << " of the four points needed to activate the construct. Any extra points are transfered to the God's Hand device." << endl;
 					if (result >= 4)
 					{
 						godsHandCharge += (result - 4);
